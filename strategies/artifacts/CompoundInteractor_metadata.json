@@ -1,0 +1,710 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_pvault",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_controller",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_native",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_want",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_ctoken",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_comptroller",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_swapRouter",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "oldBalance",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newBalance",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "feeAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ProfitLog",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldOperator",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOperator",
+						"type": "address"
+					}
+				],
+				"name": "SetOperator",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "_weth",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "claimComp",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "claimMarkets",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "comptroller",
+				"outputs": [
+					{
+						"internalType": "contract ComptrollerInterface",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "controller",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ctoken",
+				"outputs": [
+					{
+						"internalType": "contract CompleteCToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "harvest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "invest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "operator",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "profitSharingFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardToken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "routerToken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_asset",
+						"type": "address"
+					}
+				],
+				"name": "salvageToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "_markets",
+						"type": "address[]"
+					}
+				],
+				"name": "setClaimMarkers",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_controller",
+						"type": "address"
+					}
+				],
+				"name": "setController",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOperator",
+						"type": "address"
+					}
+				],
+				"name": "setOperator",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_performanceFee",
+						"type": "uint256"
+					}
+				],
+				"name": "setPerformanceFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "setRouterAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "setRouterToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "setSwapMining",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "swapMining",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "swapRouter",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "underlying",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "underlyingBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vault",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawAllToVault",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawSwapMining",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawToVault",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/strategies/CompoundInteractor.sol": "CompoundInteractor"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Operatable.sol": {
+			"keccak256": "0xbaefca615fc8060c84d0231545907d768f244c67bc4062b0ad9cd17ed8d313d2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ef8b722eccb6761415da42e2c57d3f0973096ace5899b03999d3a1b26f0d2231",
+				"dweb:/ipfs/QmduSrGZrvuva2ZMMm9iJddDgrkm1k5Gpv3tKprBALAkQD"
+			]
+		},
+		"contracts/interfaces/compound/CTokenInterfaces.sol": {
+			"keccak256": "0x8b1425eb5e683fc51d6d4fa2d3357eebce8bbf1e2799778e68bf3d367d7ec978",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ea80f304a9559de086a6ecca896fefa411e55f7f7871ef055584316a40223514",
+				"dweb:/ipfs/QmP43qEHN6RN9qjR5ra6Nn7Y4Sdpyjnh6B5jDPfCWQTPxD"
+			]
+		},
+		"contracts/interfaces/compound/ComptrollerInterface.sol": {
+			"keccak256": "0x19a2286a9b1a02ca93b056a761856ae370f07a26b36dc98672cee63db9e72274",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://16e1a6c3cbfaa4a469365068d07e28476e0f9568b1a3265a6c151ed92d6fdad9",
+				"dweb:/ipfs/QmULZvoyniCCVhbfLHwcAKmzJv2EdBppxMxrgfkdXsdgb5"
+			]
+		},
+		"contracts/interfaces/compound/ICEther.sol": {
+			"keccak256": "0xbf5a93631a07ed58c71daa0e69c92b68d095d4a49640e1d7cb5dba44d8deb81b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://aa8bf0e5ed7a56102f009a62cf529dc267c24ae2959638bbf457fee748b35c75",
+				"dweb:/ipfs/QmUsioyzkcm5N6SYtTfMskCoKwSs7qiDRc1pkpyjRWJjPn"
+			]
+		},
+		"contracts/interfaces/compound/InterestRateModel.sol": {
+			"keccak256": "0xf3667685c80b26bcfa0ea33d63b6c34404a050edeb8ad64b214c236272509bd9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://454bf028724e30b84fb4a43a5d3466a2fd2c3ea8b9245842d017ad9f74b17ba6",
+				"dweb:/ipfs/QmXKPSrib6r4aJJCMKo1BQay6fpMs6GdGXuQ1KAAga6iQz"
+			]
+		},
+		"contracts/interfaces/mdex/IMdexPair.sol": {
+			"keccak256": "0x55f5a8a0fb64edc0d71e9303ac6e5ee0d43bc19c05260375efbc863808fd964a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0694475e709a6d8eca2162794a4343b0e6fb8bf5f9bde78b1197a4c0b67b05d5",
+				"dweb:/ipfs/QmQ1nY7hBnbUBNL4HuAjo3bdoYAgjUFKvv2DVPFjNKYxzB"
+			]
+		},
+		"contracts/interfaces/mdex/ISwapMining.sol": {
+			"keccak256": "0x088219c309099edebff28a3508dc534fc91b5cabe97ffa9d45560404b3058626",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7deee2f0f06757cf246909b5820f67a52e755f7de39c8835a88282840701900c",
+				"dweb:/ipfs/QmXKXiQhB86NPq14SuJBjYsn8HbaPFkR8H9XTotozHmgkr"
+			]
+		},
+		"contracts/interfaces/weth/WETH9.sol": {
+			"keccak256": "0x96e62afc224a406f4235ac7ecaf7305ce4715eb915aad966abf3480bcb0a4d8f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d41f3268a8b1966b9e8fd5d787d16eec7b1faf125471c8251fd1897093616e1b",
+				"dweb:/ipfs/Qmc6qd6F447c6GUmJdAVL6V8yihoQvbU28c9isvZFGZVZy"
+			]
+		},
+		"contracts/interfaces/yearn/IController.sol": {
+			"keccak256": "0x28af0d21a8e3b5ad6aee16a32512ca7b460bcf51f11c59941dbe24bd3da33ff1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2dac02b6b6db5ec9cddd2801f613c2e0a799d8f43380f11acd8f0ae8d392e33d",
+				"dweb:/ipfs/QmYMqCfy9QKFFaNUVXWXuewFa8dUaPiwoHXiqyKA8Xbq36"
+			]
+		},
+		"contracts/interfaces/yearn/IStrategy.sol": {
+			"keccak256": "0x1d77fc79aec28829cc5b2ba6d3936846f9007ce8468555f1b950459a09eee42e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cd631963cd6953760977cd03406a96f800b0d7eda81d109a3d5923c86aa2933d",
+				"dweb:/ipfs/QmTGESTqm7asdVKNUSTGiRLneq3N9jtbMS8cf9oztb4gED"
+			]
+		},
+		"contracts/lib/TransferHelper.sol": {
+			"keccak256": "0xa520c6ced90776340c5b52d7f96a0aa047801c1c969f52a8bc688d15bc08cc42",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1c154ded178df0130d690ec20a405bab72a6eca5e420749d113055528a7d848d",
+				"dweb:/ipfs/QmQVrLDF21y89BFG7PmMoxi9CkM4qTK8gnGwvmGeuiGGZo"
+			]
+		},
+		"contracts/strategies/CompleteCToken.sol": {
+			"keccak256": "0xf21701ea11eba26be79cf9c954ace49591c13c91ab208dd806b291835041eb8f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4840305f8ffe547656a1f24f186a86bd3d77a8cbbc0fdfa8952a3eb37de60a47",
+				"dweb:/ipfs/QmXev3v1Eoq4Y4KJcL63jDkBjB9z1xM8C8Z7XYCuvHMCEc"
+			]
+		},
+		"contracts/strategies/CompoundInteractor.sol": {
+			"keccak256": "0x560585611776fed53cda6ec60c0d04d99b05e01c30bff7c95f976994b2ed4639",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e9bea887af0009364f6dacf9552bcf81cc153619325f7656ac5fda1a18ff4276",
+				"dweb:/ipfs/QmYroZxvCv5adajXEvKHQYwSK5GjXDYKSv9iP7s5EyUvUD"
+			]
+		},
+		"contracts/strategies/ProfitNotifier.sol": {
+			"keccak256": "0x4ee81c32d6572c1e9f5998c5eee8bc4f565b0517d2ea329d7715a5958c36a775",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ce779ea5350f97771c774b30a9697131c258c092f6d69f33c28a0321865861bc",
+				"dweb:/ipfs/QmfWzQkKoP4KfWqi7N3XtzvgfHfHafoMQVYkvZsMF31T9f"
+			]
+		},
+		"openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0x15e2d5bd4c28a88548074c54d220e8086f638a71ed07e6b3ba5a70066fcf458d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://90faf5851c02f9bd42c5bfb54d4f0421a2612f50ab80b2c4fa24fa3792071cc2",
+				"dweb:/ipfs/QmRGM4F2PcGVF85aTfaA9YBhCHHDqrMhRjyp6fGeBTtirb"
+			]
+		},
+		"openzeppelin/contracts/math/Math.sol": {
+			"keccak256": "0x363bd3b45201f07c9b71c2edc96533468cf14a3d029fabd82fddceb1eb3ebd9c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d676d5c3a72e5fea8364a1e3e5b488a959aae08d069995b1274027f3845e6521",
+				"dweb:/ipfs/Qma7DL738Wje4G9kcwW9bXwTGY4ePR7SMmsMhbULWqmixE"
+			]
+		},
+		"openzeppelin/contracts/math/SafeMath.sol": {
+			"keccak256": "0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c",
+				"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR"
+			]
+		},
+		"openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08",
+				"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC"
+			]
+		},
+		"openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x8d3cb350f04ff49cfb10aef08d87f19dcbaecc8027b0bed12f3275cd12f38cf0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ded47ec7c96750f9bd04bbbc84f659992d4ba901cb7b532a52cd468272cf378f",
+				"dweb:/ipfs/QmfBrGtQP7rZEqEg6Wz6jh2N2Kukpj1z5v3CGWmAqrzm96"
+			]
+		},
+		"openzeppelin/contracts/utils/ReentrancyGuard.sol": {
+			"keccak256": "0x8bbbc2f5c10065ee272592ae0a7a6ceb23de2fbd81564ee0bb015ecf404d5f61",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b95e56c1640d0ef789fc5c16269e141e992f6c8ac97cc6d377bd3825e9cab182",
+				"dweb:/ipfs/QmVzaxJZY51EhagrcNnkxoU6Uq17RhATe7aHvtkC6wUkgK"
+			]
+		}
+	},
+	"version": 1
+}

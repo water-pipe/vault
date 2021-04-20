@@ -1,0 +1,61 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203b210b130ed6c1c33d4af9f741dacd921610aedc4224f7eff9a9d1b7de1a571d64736f6c634300060c0033",
+			"opcodes": "PUSH1 0x56 PUSH1 0x23 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x16 JUMPI INVALID JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 EXTCODESIZE 0x21 SIGNEXTEND SGT 0xE 0xD6 0xC1 0xC3 RETURNDATASIZE 0x4A 0xF9 0xF7 COINBASE 0xDA 0xCD SWAP3 AND LT 0xAE 0xDC TIMESTAMP 0x24 0xF7 0xEF 0xF9 0xA9 0xD1 0xB7 0xDE BYTE JUMPI SAR PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+			"sourceMap": "58:1152:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203b210b130ed6c1c33d4af9f741dacd921610aedc4224f7eff9a9d1b7de1a571d64736f6c634300060c0033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 EXTCODESIZE 0x21 SIGNEXTEND SGT 0xE 0xD6 0xC1 0xC3 RETURNDATASIZE 0x4A 0xF9 0xF7 COINBASE 0xDA 0xCD SWAP3 AND LT 0xAE 0xDC TIMESTAMP 0x24 0xF7 0xEF 0xF9 0xA9 0xD1 0xB7 0xDE BYTE JUMPI SAR PUSH5 0x736F6C6343 STOP MOD 0xC STOP CALLER ",
+			"sourceMap": "58:1152:0:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17200",
+				"executionCost": "97",
+				"totalCost": "17297"
+			},
+			"internal": {
+				"safeApprove(address,address,uint256)": "infinite",
+				"safeTransfer(address,address,uint256)": "infinite",
+				"safeTransferFrom(address,address,address,uint256)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}
